@@ -1,0 +1,23 @@
+{
+  "name": "node.js-mysql",
+  "version": "1.0.0",
+  "description": "Homework assignment replicating basic amazon features using node.js and mysql",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bingojosh/nodejs-mysql.git"
+  },
+  "author": "Bingojosh1",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bingojosh/nodejs-mysql/issues"
+  },
+  "homepage": "https://github.com/bingojosh/nodejs-mysql#readme",
+  "dependencies": {
+    "inquirer": "^6.2.2",
+    "mysql": "^2.16.0"
+  }
+}
