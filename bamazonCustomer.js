@@ -55,7 +55,7 @@ function customer(){
                     "UPDATE products SET ? WHERE ?",
                     [
                         {
-                            stock_quantity:- answer.quantity
+                            stock_quantity: parseInt(res[0].stock_quantity) - parseInt(answer.quantity)
                         },
                         {
                             item_id: answer.order

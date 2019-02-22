@@ -88,11 +88,19 @@ function addInv(){
         message: "How many are you adding?"
         }
     ]).then(function(answer){
-        connection.query("UPDATE products SET ? WHERE ?", [
-            {stock_quantity: + answer.quantity},
-            {item_id: answer.inventory}
-        ])
-        tableView();
+        connection.query("SELECT * FROM products WHERE ?", {item_id: answer.inventory}, function(err, res){
+            var quantity = parseInt(res[0].stock_quantity) + parseInt(answer.quantity)
+            connection.query("UPDATE products SET ? WHERE ?", 
+            [
+                {
+                    stock_quantity: quantity
+                },
+                {
+                    item_id: answer.inventory
+                }
+            ])
+            console.log("The quantity of " + res[0].product_name + " is now " + quantity);
+        })
     })
 }
 
